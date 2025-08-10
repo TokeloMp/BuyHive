@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Orders</title>
+    <link rel="stylesheet" href="orders.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="admin__container">
+         <!--Top nav-->
+         <nav class="top__nav">
+            <button class="hamburger" id="menuToggle">&#9776;</button>
+            <div class="logo">BuyHive Admin</div>
+            <ul class="nav__links">
+                <li><a href="admin.html">Dashboard</a></li>
+                <li><a href="admin-user.html">Users</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="orders.html">Orders</a></li>
+                <li><a href="payments.html">Payments</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="settings.html">Settings</a></li>
+            </ul>
+            <button class="logout-btn">Logout</button>
+        </nav>
+
+        <main class="main__content">
+            <h1>Order Management</h1>
+
+            <div class="table__wrapper">
+                <table class="order__table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Product</th>
+                            <th>Seller</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ordersTableBody">
+                        <!--JS-->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <div class="mobile__menu" id="mobileMenu">
+        <ul>
+            <li><a href="admin.html">Dashboard</a></li>
+            <li><a href="admin-user.html">Users</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="orders.html">Orders</a></li>
+            <li><a href="payments.html">Payment</a></li>
+            <li><a href="reports.html">Reports</a></li>
+            <li><a href="settings.html">Settings</a></li>
+        </ul>
+        <button id="closeMenu">Close</button>
+    </div>
+
+    <script src="orders.js"></script>
+</body>
+</html>

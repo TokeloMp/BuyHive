@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin- Manage Users</title>
+    <link rel="stylesheet" href="admin-user.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="admin__container">
+        <!--Top nav-->
+        <nav class="top__nav">
+            <button class="hamburger" id="menuToggle">&#9776;</button>
+            <div class="logo">BuyHive Admin</div>
+            <ul class="nav__links">
+                <li><a href="admin.html">Dashboard</a></li>
+                <li><a href="admin-user.html">Users</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="orders.html">Orders</a></li>
+                <li><a href="payments.html">Payments</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="settings.html">Settings</a></li>
+            </ul>
+            <button class="logout-btn">Logout</button>
+        </nav>
+
+        
+        <!--Main content-->
+        <main class="main__content">
+            <h1>User Management</h1>
+            <button class="add-user-btn">+ Add New User</button>
+            <div class="table__wrapper">
+                <table class="user__table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>001</td>
+                            <td>Kevin</td>
+                            <td>Smith</td>
+                            <td>smith@gmail.com</td>
+                            <td>Admin</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>002</td>
+                            <td>Jane</td>
+                            <td>Daisy</td>
+                            <td>jane@gmail.com</td>
+                            <td>Seller</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <div class="mobile__menu" id="mobileMenu">
+        <ul>
+            <li><a href="admin.html">Dashboard</a></li>
+            <li><a href="admin-user.html">Users</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="orders.html">Orders</a></li>
+            <li><a href="payments.html">Payments</a></li>
+            <li><a href="reports.html">Reports</a></li>
+            <li><a href="settings.html">Settings</a></li>
+        </ul>
+        <button id="closeMenu">Close</button>
+    </div>
+</body>
+<script src="admin-user.js"></script>
+</html>

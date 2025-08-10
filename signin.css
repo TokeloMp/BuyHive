@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+/*Sign-In Section*/
+.signin {
+    background: #141414;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: #fff;
+}
+
+#signin__logo {
+    background-color: #ffff00;
+    background-image: linear-gradient(to top, #ffff00 0%, #ffa500 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: #ffa500;
+    -moz-text-fill-color: transparent;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.signin h1 {
+    background-image: linear-gradient(to right, #ff0844 0%, #ffff00 95%, #ffa500 5%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.5rem;
+    margin-top: 2rem;
+}
+
+.signin__form {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255,255,255, 0.1);
+    padding: 2rem;
+    border-radius: 8px;
+    width: 400px;
+    text-align: center;
+}
+
+.signin__group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.signin__group input {
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+.signin-check {
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.register {
+    text-decoration: none;
+}
+
+.signin__btn {
+    background: linear-gradient(to right, #ff0844 0%, #ffa500 100%);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.signin__btn:hover {
+    color: #fff;
+    opacity: 0.8;
+}
+
+@media screen and (max-width: 768px) {
+    .signin {
+        height: 90vh;
+        padding: 2rem 1rem;
+    }
+
+    .signin h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .signin__form {
+        width: 100%;
+        max-width: 350px;
+        padding: 1.5rem;
+    }
+
+    .signin__group {
+        flex-direction: column;
+    }
+
+    .signin__group input {
+        font-size: 0.9rem;
+    }
+
+    .signin__btn {
+        font-size: 1rem;
+        padding: 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .signin h1 {
+        font-size: 1.8rem;
+    }
+
+    .signin__form {
+        max-width: 300px;
+    }
+}

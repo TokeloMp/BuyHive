@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuyHive Admin Dashboard</title>
+    <link rel="stylesheet" href="admin.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="admin__container">
+        <!--Sidebar for desktop-->
+        <aside class="sidebar">
+            <h2 class="active">BuyHive</h2>
+            <ul class="sidebar__menu">
+                <li class="dashboard__item">
+                    <a href="admin.html" class="dashboard__links">Dashboard</a>
+                </li>
+                <li class="dashboard__item">
+                    <a href="admin-user.html" class="dashboard__links">Users</a>
+                </li>
+                <li class="dashboard__item">
+                    <a href="products.html" class="dashboard__links">Products</a>
+                </li>
+                <li class="dashboard__item">
+                    <a href="orders.html" class="dashboard__links">Orders</a>
+                </li>
+                <li class="dashboard__item">
+                    <a href="payments.html" class="dashboard__links">Payments</a>
+                </li>
+                <li class="dashboard__item">
+                    <a href="reports.html" class="dashboard__links">Reports</a>
+                </li>
+                <li class="dashboard__item">
+                    <a href="settings.html" class="dashboard__links">Settings</a>
+                </li>
+            </ul>
+        </aside>
+        <!--Main Content-->
+        <main class="main__content">
+            <h1>Welcome, Admin</h1>
+            <header class="topbar">
+                <button id="sidebarToggle" class="hamburger">&#9776;</button>
+                <input type="search" placeholder="Search..." />
+            </header>
+            <section class="card__overview">
+                <div class="card">Users<br><strong>345</strong></div>
+                <div class="card">Orders<br><strong>112</strong></div>
+                <div class="card">Revenue<br><strong>R4 215</strong></div>
+                <div class="card">Low Stock<br><strong>8 Products</strong></div>
+            </section>
+            <div class="main__img--content">
+                <img src="admin_images/picture1.svg" alt="pic" id="main__img">
+            </div>
+           
+        </main>
+
+        <!--Mobile menu-->
+        <div class="mobile__menu" id="mobileMenu">
+            <ul>
+                <li><a href="admin.html">Dashboard</a></li>
+                <li><a href="admin-user.html">Users</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="orders.html">Orders</a></li>
+                <li><a href="payments.html">Payments</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="settings.html">Settings</a></li>
+            </ul>
+            <button id="closeMenu">Close</button>
+        </div>
+    </div>
+    <script src="admin.js"></script>
+</body>
+</html>

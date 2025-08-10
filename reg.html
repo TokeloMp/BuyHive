@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BuyHive</title>
+        <link rel="stylesheet" href="regstyles.css">
+    </head>
+    <body>
+        <!--Registration Form-->
+        <div class="registration">
+            <div class="registration__logo">
+                <a href="index.html" id="registration__logo">BuyHive</a>
+            </div>
+            <h1>Create Your Account</h1>
+            <form id="registrationForm" class="registration__form">
+                <div class="registration__group">
+                    <input type="text" name="firstname" placeholder="First Name" required>
+                    <input type="text" name="lastname" placeholder="Last Name" required>
+                </div>
+                <div class="registration__group">
+                    <input type="date" name="DOB" required>
+                </div>
+                <div class="registration__group">
+                    <input type="text" name="username" placeholder="Create Username" required>
+                    <input type="password" name="password" placeholder="Create Password" required>
+                    <input type="password" name="confirm_password" placeholder="Verify Password" required>
+                </div>
+                <button type="submit" class="registration__btn">Create Account</button>
+            </form>
+        </div>
+        <script>
+            document.getElementById("registrationForm").addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                const form = event.target;
+                const username = form.username.value.trim();
+                const password = form.password.value;
+                const confirm_password = form.confirm_password.value;
+
+                if (password !== confirm_password) {
+                    alert("Passwords do not match!");
+                    return;
+                }
+
+                // Simulate saving user info (you'd use a database in real app)
+                localStorage.setItem("loggedIn", "true");
+                localStorage.setItem("username", username);
+
+                //Redirect to the home page
+                window.location.href = "index.html";
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BuyHive</title>
+        <link rel="stylesheet" href="signin.css">
+    </head>
+    <body>
+        <!--Sign-In Form-->
+        <div class="signin">
+            <div class="signin__logo">
+                <a href="index.html" id="signin__logo">BuyHive</a>
+        </div>
+        <h1>SIGN IN</h1>
+        <form action="#" method="POST" class="signin__form">
+            <div class="signin__group">
+                <input type="text" name="username" placeholder="Enter Username" required>
+                <input type="password" name="password" placeholder="Enter password" required>
+                
+            </div>
+            <div class="signin-check">
+                <div class="remember">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Remember me</label> 
+                </div>
+                
+            </div>
+            <br><div class="register">
+                <span>Don't have an account?
+                    <a href="reg.html">Register</a>
+                </span>
+            </div>
+            <br><button type="submit" class="signin__btn">SIGN IN</button>
+
+        </form>
+
+        <script>
+            const form = document.getElementById('signinForm');
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                localStorage.setItem("loggedIn", "true");
+
+                window.location.href = "index.html"
+            });
+        </script>
+    </body>
+</html>

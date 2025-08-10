@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuyerDashboard</title>
+    <link rel="stylesheet" href="buyer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&family=Poppins&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="index.html" id="navbar__logo">BuyHive</a>
+            <div class="navbar__toggle" id="mobile__menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item"><a href="index.html" class="navbar__links">Home</a></li>
+                <li class="navbar__item"><a href="#" class="navbar__links">About</a></li>
+                <li class="navbar__item"><a href="#" class="navbar__links">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="main__container">
+        <h2 class="section__title">Buyer Dashboard</h2>
+
+        <div class="category__filters">
+            <button class="filter__btn active" data-category="all">ALL</button>
+            <button class="filter__btn" data-category="tools">TOOLS</button>
+            <button class="filter__btn" data-category="home-decor">HOME DECOR</button>
+            <button class="filter__btn" data-category="electronics">ELECTRONICS</button>
+            <button class="filter__btn" data-category="indoor">INDOOR</button>
+            <button class="filter__btn" data-category="outdoor">OUTDOOR</button>
+        </div>
+
+        <div class="controls">
+            <input type="text" id="searchInput" placeholder="Search for a product...">
+            <select id="sortSelect">
+                <option value="default">Sort By</option>
+                <option value="az">Name: A-Z</option>
+                <option value="za">Name: Z-A</option>
+            </select>
+        </div>
+        <div class="view__cart__container">
+            <button id="viewCartBtn" onclick="viewCart()">View Cart</button>
+        </div>
+        <div class="product__grid" id="productGrid">
+            <div class="product__card" data-category="tools" 
+                    data-name="Hammer"
+                    data-description="A heavy-duty hammer for all your tool needs."
+                    data-price="R199.99"
+                    data-seller="ToolMaster"
+                    data-image="images/pic5.jpg"
+                    onclick="openProductDetails(this)">
+                <img src="images/pic5.jpg" alt="Hammer">
+                <h3>Hammer</h3>
+                <p>Sold by: ToolMaster</p>
+            </div>
+            <div class="product__card" data-category="home-decor" 
+                    data-name="Lamp"
+                    data-description="A great lamp to light up the room"
+                    data-price="R79.99"
+                    data-seller="DecorDelight"
+                    data-image="images/pic7.jpg"
+                    onclick="openProductDetails(this)">
+                <img src="images/pic7.jpg" alt="Lamp">
+                <h3>Lamp</h3>
+                <p>Sold by: DecorDelight</p>
+            </div>
+            <div class="product__card" data-category="electronics"
+                    data-name="Wireless Headphones"
+                    data-description="Block out the noise with your choice of music with these headphones"
+                    data-price="R249.99"
+                    data-seller="ToolMaster"
+                    data-image="images/pic6.jpg"
+                    onclick="openProductDetails(this)">
+                <img src="images/pic6.jpg" alt="Headphones">
+                <h3>Wireless Headphone</h3>
+                <p>Sold by: AudioWorld</p>
+            </div>
+            <div class="product__card" data-category="indoor"
+                    data-name="Camping Stuff"
+                    data-description="Explore the great outdoors with the best camping equipment"
+                    data-price="R799.99"
+                    data-seller="ToolMaster"
+                    data-image="images/pic8.jpg"
+                    onclick="openProductDetails(this)">
+                <img src="images/pic8.jpg" alt="Indoor">
+                <h3>Camping Stuff</h3>
+                <p>Sold by: OutdoorJunkie</p>
+            </div>
+            <div class="product__card" data-category="outdoor"
+                    data-name="Indoor Products"
+                    data-description="Tur your house into your home"
+                    data-price="R199.99"
+                    data-seller="ToolMaster"
+                    data-image="images/pic4.jpg"
+                    onclick="openProductDetails(this)">
+                <img src="images/pic4.jpg" alt="Outdoor">
+                <h3>Indoor Products</h3>
+                <p>Sold by: IndoorGuru</p>
+            </div>
+            
+        </div>
+        <div id="productModal" class="modal">
+            <div class="modal__content">
+                <span class="close" onclick="closeProductDetails()">&times;</span>
+                <img id="modalImage" src="" alt="Product Image">
+                <h2 id="modalName"></h2>
+                <p id="modalDescription"></p>
+                <p><strong>Seller:</strong><span id="modalSeller"></span></p>
+                <button onclick="addToCart()">+ Add to Cart</button>
+            </div>
+        </div>
+       
+    </section>
+
+    <script>
+        const filterButtons = document.querySelectorAll('.filter__btn');
+        const productCards = document.querySelectorAll('.product__card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const selectedCategory = button.getAttribute('data-category');
+
+                productCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    card.style.display = (selectedCategory === 'all' || selectedCategory === cardCategory)
+                    ? 'block'
+                    : 'none';
+                });
+            });
+        });
+        
+        // Mobile nav toggle
+        const menu = document.querySelector("#mobile__menu")
+        const menuLinks = document.querySelector(".navbar__menu")
+
+        menu.addEventListener("click", () => {
+            menu.classList.toggle("is-active");
+            menuLinks.classList.toggle("is-active");
+        });
+
+        // Search Filter
+        const searchInput = document.getElementById('searchInput');
+
+        searchInput.addEventListener('input', () => {
+            const searchTerm = searchInput.value.toLowerCase();
+            productCards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                card.style.display = title.includes(searchTerm) ? 'block' : 'none';
+            });
+        });
+
+        //Sorting
+        const sortSelect = document.getElementById('sortSelect');
+
+        sortSelect.addEventListener('change', () => {
+            const sortValue = sortSelect.value;
+            const sortedCards = [...productCards].sort((a, b) => {
+                const nameA = a.querySelector('h3').textContent.toLowerCase();
+                const nameB = b.querySelector('h3').textContent.toLowerCase();
+
+                if (sortValue === 'az') return nameA.localeCompare(nameB);
+                if (sortValue === 'za') return nameB.localeCompare(nameA);
+                return 0;
+            });
+
+            //Clear and re-append sorted elements
+            const grid = document.getElementById('productGrid');
+            grid.innerHTML = '';
+            sortedCards.forEach(card => grid.appendChild(card));
+        });
+        // Product detail Modal
+        function openProductDetails(card) {
+            const name = card.dataset.name;
+            const description = card.dataset.description;
+            const price = card.dataset.price;
+            const seller = card.dataset.seller;
+            const image = card.dataset.image;
+
+            document.getElementById("modalName").innerText = name;
+            document.getElementById("modalDescription").innerText = `${description} - ${price}`;
+            document.getElementById("modalSeller").innerText = seller;
+            document.getElementById("modalImage").src= image;
+
+            document.getElementById("productModal").style.display = "block";
+
+            // Save current product to a temporary variable
+            window.currentProduct = {name, description, price, seller, image};
+        }
+
+        function closeProductDetails() {
+            document.getElementById("productModal").style.display = "none";
+        }
+
+        function addToCart() {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            if (window.currentProduct) {
+                cart.push(window.currentProduct);
+                localStorage.setItem("cart", JSON.stringify(cart));
+                alert("Product added to cart!");
+            } else {
+                console.warn("No product is selected to add to cart.");
+                alert("Something went wrong. Please try selecting the product again.");
+            }
+
+            closeProductDetails();
+        }
+
+        function viewCart() {
+            window.location.href = "cart.html";
+        }
+    </script>
+    
+</body>
+</html>

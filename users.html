@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuyHive-User</title>
+    <link rel="stylesheet" href="users.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&family=Poppins&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <!--Nav bar-->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="index.html" id="navbar__logo">BuyHive</a>
+            <div class="navbar__toggle" id="mobile__menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item"><a href="users.html" class="navbar__links">Home</a></li>
+                <li class="navbar__item"><a href="#" class="navbar__links">About</a></li>
+                <li class="navbar__item"><a href="#" class="navbar__links">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--Tab Button-->
+    <section class="main">
+        <div class="main__container">
+            <div class="tab__buttons">
+                <button class="main__btn" onclick="window.location.href='buyer.html'">Buyer</button>
+                <button class="main__btn" onclick="window.location.href='seller.html'">Seller</button>
+            </div>
+            <div class="dashboard__wrapper">
+                <!--Buyer Panel-->
+                <div id="buyer" class="tab__content active">
+                    <h2 style="color: #ffa500;">Buyer Dashboard</h2>
+                    <ul style="color: #fff; font-size:1.2rem;">
+                        <li>Browse products</li>
+                        <li>Add items to your cart</li>
+                        <li>Choose your payment method</li>
+                    </ul>
+                </div>
+    
+                <!--Seller Panel-->
+                <div id="seller" class="tab__content">
+                    <h2 style="color: #ffa500;">Seller Dashboard</h2>
+                    <ul style="color: #fff; font-size:1.2rem;">
+                        <li>List your products</li>
+                        <li>Update your inventory</li>
+                        <li>Track customer orders</li>
+                    </ul>
+                </div>
+            </div>    
+            
+            
+        </div>
+    </section>
+    
+    <script>
+        document.querySelector(".main__btn:nth-child(1)").addEventListener("click", () => {
+            document.getElementById("buyer").scrollIntoView({behavior: "smooth"});
+        });
+
+        // Mobile nav toggle
+        const menu = document.querySelector("#mobile__menu")
+        const menuLinks = document.querySelector(".navbar__menu")
+
+        menu.addEventListener("click", () => {
+            menu.classList.toggle("is-active");
+            menuLinks.classList.toggle("is-active");
+        });
+    </script>
+    <footer class="footer">
+        <div class="footer__container">
+            <p>2025 BuyHive</p>
+            <div class="footer__links">
+                <a href="aboutUs.html">How does it work</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Help</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

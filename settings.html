@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="settings.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="admin__container">
+        <!--Top nav-->
+        <nav class="top__nav">
+            <button class="hamburger" id="menuToggle">&#9776;</button>
+            <div class="logo">BuyHive Admin</div>
+            <ul class="nav__links">
+                <li><a href="admin.html">Dashboard</a></li>
+                <li><a href="admin-user.html">Users</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="orders.html">Orders</a></li>
+                <li><a href="payments.html">Payments</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="settings.html">Settings</a></li>
+            </ul>
+            <button class="logout-btn">Logout</button>
+        </nav>
+
+        <main class="main__content">
+            <h1>Settings</h1>
+
+            <!--Appearance-->
+            <section class="settings__section">
+                <h2>Appearance</h2>
+                <label>
+                    Theme:
+                    <select id="themeSelect">
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                    </select>
+                </label>
+            </section>
+
+            <!--Functionality-->
+            <section class="settings__section">
+                <h2>Functionality</h2>
+                <label>
+                    <input type="checkbox" id="enableComments" checked />
+                    Enable Comments
+                </label>
+                <label>
+                    <input type="checkbox" id="enableNotifications" />
+                    Enable Email Notifications
+                </label>
+            </section>
+
+            <!--Security-->
+            <section class="settings__section">
+                <h2>Security</h2>
+                <button id="resetPasswordBtn">Reset Admin Password</button><br />
+                <label>
+                    <input type="checkbox" id="enable2FA" />
+                    Enable Two-Factor Authentication
+                </label>
+            </section>
+            <section class="settings__section">
+                <h2>Security & Maintenance</h2>
+                <div class="security__controls">
+                    <button onclick="scanThreats()">Scan for Threats</button>
+                    <button onclick="backupData()">Perform Backup</button>
+                    <button onclick="updateSystem()">Run System Update</button>
+                    <button onclick="manageDatabase()">Manage Database</button>
+                </div>
+                <div class="security__log" id="securityLog">
+                    <h3>System Log</h3>
+                    <ul id="logList">
+                        <!--Logs appear here-->
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="mobile__menu" id="mobileMenu">
+        <ul>
+            <li><a href="admin.html">Dashboard</a></li>
+            <li><a href="users.html">Users</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="orders.html">Orders</a></li>
+            <li><a href="payments.html">Payment</a></li>
+            <li><a href="reports.html">Reports</a></li>
+            <li><a href="settings.html">Settings</a></li>
+        </ul>
+        <button id="closeMenu">Close</button>
+    </div>
+    
+    <script src="settings.js"></script>
+</body>
+</html>

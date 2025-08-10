@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BuyHive</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href=
+        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+         
+        
+    </head>
+    <body>
+        <!--Navbar section-->
+        <nav class="navbar">
+            <div class="navbar__container">
+                <a href="index.html" id="navbar__logo">BuyHive</a>
+                <div class="navbar__toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="navbar__menu">
+                    <li class="navbar__item">
+                        <a href="index.html" onclick="checkLogin(event, 'index.html')" class="navbar__links">HOME</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="buyer.html" onclick="checkLogin(event, 'products.html')" class="navbar__links">PRODUCTS</a>
+                    </li>
+                    <li class="navbar__btn">
+                        <a href="reg.html" class="button">REGISTER</a>
+                    </li>
+                    <li class="navbar__btn">
+                        <a href="signin.html" onclick="checkLogin(event, 'signin.html')" class="button">SIGN IN</a>
+                    </li>
+                    <li class="navbar__btn">
+                        <a href="#" id="logoutButton" class="button">LOG OUT</a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+        <!--Main Section-->
+        <div class="main">
+            <div class="main__container">
+                <div class="main__content">
+                    <h1>A Broad Marketplace</h1>
+                    <h2>BUY OR SELL</h2>
+                    <p>A place where online shopping is too easy</p>
+                    <button class="main__btn" onclick="checkLogin(event, 'users.html')"><a href="users.html">Get Started</a></button>
+                </div>
+                <div class="main__img--container">
+                    <img src="images/pic1.svg" alt="pic" id="main__img">
+                </div>
+            </div>
+        </div>
+        <!--Services Section-->
+        <div class="services">
+            <h1>Explore the World of eCommerce</h1>
+            <div class="services__container">
+                <div class="services__card">
+                    <h2>Start selling now</h2>
+                    <p>Create a profile where you can sell your own things</p>
+                    <div class="secimage">
+                        <img src="images/pic2.jpg" alt="picture" id="picture2">
+                        
+                    </div>
+                    <a href="seller.html" class="btn-link">Get Started</a>
+                </div>
+                <div class="services__card">
+                    <h2>Browse through many options</h2>
+                    <p>Find what you're looking for here</p>
+                    <div class="thirdimage">
+                        <img src="images/pic3.jpg" alt="picture" id="picture3">
+                    </div>
+                    <a href="buyer.html" class="btn-link">Get Started</a>
+                </div>
+            </div>
+        </div>
+        <!--Footer Section-->
+        <div class="footer__container">
+            <div class="footer__links">
+                <div class="footer__link-wrapper">
+                    <div class="footer__link--items">
+                        <h2>About Us</h2>
+                        <a href="aboutUs.html">How it works</a>
+                    </div>
+                </div>
+            </div>
+            <div class="social__media">
+                <div class="social__media--wrap">
+                    <div class="footer__logo">
+                        <a href="index.html" id="footer__logo"><i class="fas" fa-gem>BuyHive</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>
